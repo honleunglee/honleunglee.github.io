@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Gradient Descent</title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <script src="../assets/mathjax.js"></script>
+    <script async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html">← Home</a>
+</nav>
+
+<h1>Understanding Gradient Descent</h1>
+
+<p><em>June 2026</em></p>
+
+<p>
+Gradient descent is the workhorse of modern machine learning.
+</p>
+
+<p>
+The update rule is
+</p>
+
+$$
+\theta_{t+1}
+=
+\theta_t
+-
+\eta\nabla J(\theta_t)
+$$
+
+<p>
+where:
+</p>
+
+<ul>
+    <li>$\theta$ is the parameter vector</li>
+    <li>$\eta$ is the learning rate</li>
+    <li>$J$ is the loss function</li>
+</ul>
+
+<p>
+For the simple objective
+</p>
+
+$$
+J(x)=x^2
+$$
+
+<p>
+the gradient is
+</p>
+
+$$
+\frac{dJ}{dx}=2x
+$$
+
+<p>
+which drives the parameter toward zero.
+</p>
+
+<pre><code>
+x = x - lr * grad
+</code></pre>
+
+</body>
+</html>

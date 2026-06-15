@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Short Note on Fourier Transforms</title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <script src="../assets/mathjax.js"></script>
+    <script async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html">← Home</a>
+</nav>
+
+<h1>A Short Note on Fourier Transforms</h1>
+
+<p><em>June 2026</em></p>
+
+<p>
+The Fourier transform converts a signal from the time domain
+to the frequency domain.
+</p>
+
+$$
+\hat f(\xi)
+=
+\int_{-\infty}^{\infty}
+f(x)e^{-2\pi i x\xi}\,dx
+$$
+
+<p>
+This lets us identify the frequencies that compose a signal.
+</p>
+
+<p>
+For example:
+</p>
+
+<pre><code>
+import numpy as np
+
+x = np.linspace(0, 10, 1000)
+y = np.sin(x)
+
+Y = np.fft.fft(y)
+</code></pre>
+
+<p>
+The FFT efficiently computes a discrete Fourier transform.
+</p>
+
+</body>
+</html>
