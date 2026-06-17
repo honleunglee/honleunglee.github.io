@@ -80,6 +80,22 @@ blockquote {
     color: #555;
 }
 
+.citation {
+    white-space: nowrap;
+}
+
+.references {
+    padding-left: 1.5rem;
+}
+
+.references li {
+    margin-bottom: 0.75rem;
+}
+
+.references li:target {
+    background: #f8fafc;
+}
+
 footer {
     margin-top: 4rem;
     padding-top: 2rem;

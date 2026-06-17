@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorentzian matrices</title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <script src="../assets/mathjax.js"></script>
+    <script async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html">&larr; Home</a>
+</nav>
+
+<h1>Lorentzian matrices</h1>
+
+<p><em>June 16, 2026</em></p>
+
+<p>
+Recently I saw a result [<a class="citation" href="#ref-1" id="cite-1">1, Proposition 3.1</a>]
+about Lorentzian matrices, which I found quite interesting. This article elaborates on it a bit.
+</p>
+
+<p>
+A real matrix $A$ is <em>nonnegative</em> if all entries of $A$ are nonnegative. It is <em>positive</em>
+if all its entries are positive. When $A$ is an $n\times n$ symmetric matrix, we denote the sorted real eigenvalues
+of $A$ by $\lambda_1(A) \geq \cdots \geq \lambda_n(A)$.
+</p>
+
+<p>
+There is a spectral theory for nonnegative and positive square matrices, called
+the Perron-Frobenius theory; see [<a class="citation" href="#ref-2" id="cite-2">2</a>, <a class="citation" href="#ref-3" id="cite-3">3</a>,
+<a class="citation" href="#ref-4" id="cite-4">4</a>] and Lemma 3.8 in [<a class="citation" href="#ref-5" id="cite-5">5</a>].
+In particular, any positive square matrix has a real positive eigenvalue, and any nonnegative square matrix
+has a real nonnegative eigenvalue.
+</p>
+
+<p>
+A nonnegative real symmetric matrix is <em>Lorentzian</em> if it has at most one positive eigenvalue.
+These matrices appear in physics, for example, in the four-dimensional Lorentzian manifold modeling spacetime.
+[<a class="citation" href="#ref-1" id="cite-1">1, Proposition 3.1</a>] considers
+a $4\times 4$ nonnegative real symmetric matrix whose diagonal entries are zero, meaning
+$a_{ii} = 0$ for each $i$ and $a_{ij} = a_{ji} \geq 0$ for each $i\neq j$.
+</p>
+
+<p>
+Let $A\in\mathbb{R}^{n\times n}$ be a nonnegative symmetric matrix whose diagonal entries are zero.
+Note that $A$ must be Lorentzian when $n=1,2,3$. When $n=1$, the eigenvalue of $A$ is $a_{11} \geq 0$.
+When $n=2$, the eigenvalues of $A$ are $a_{12}, -a_{12}$ with $a_{12}\geq 0 \geq -a_{12}$.
+</p>
+
+<p>
+When $n=3$, the characteristic polynomial of $A$ has the form
+$$
+p_A(\lambda) = \lambda^3 - (a_{12}^2 + a_{13}^2 + a_{23}^2) \lambda - 2 a_{12}a_{13}a_{23}.
+$$
+When $A$ is nonzero, $a_{12}^2 + a_{13}^2 + a_{23}^2>0$ and $a_{12}a_{13}a_{23} \geq 0$.
+By Descartes' rule of signs, there is exactly one positive root. Thus $A$ is Lorentzian.
+Another way to prove this is to use the relations among the eigenvalues and the interlacing theorem
+[<a class="citation" href="#ref-6" id="cite-6">6</a>]:
+$$
+\sum_{i=1}^3 \lambda_i(A) = {\rm tr}(A) = 0, \ \prod_{i=1}^3 \lambda_i(A) = \det(A) = 2 a_{12}a_{13}a_{23} \geq 0,
+$$
+and
+$$
+\lambda_1(A) \geq a_{12} \geq \lambda_2(A) \geq -a_{12} \geq \lambda_3(A).
+$$
+If $A$ is nonzero, $\lambda_1(A)$ must be positive because $\sum_{i=1}^3 \lambda_i(A) = 0$.
+If $a_{12}=0$, then $\lambda_2(A) \leq 0$, so $\lambda_1(A)$ is the only positive eigenvalue.
+If $a_{12}>0$, then $\lambda_3(A) < 0$. Additionally, if $\lambda_2(A) > 0$, then
+$\prod_{i=1}^3 \lambda_i(A) < 0$, which is a contradiction.
+Thus $\lambda_1(A)$ is the only positive eigenvalue.
+</p>
+
+<p>
+When $n=4$, the characteristic polynomial of $A$ has the form
+$$
+p(\lambda) = \lambda^4 - \left(a_{12}^2 + a_{13}^2 + a_{14}^2 + a_{23}^2 + a_{24}^2 + a_{34}^2\right)\lambda^2 - 2\left(a_{12}a_{13}a_{23} + a_{12}a_{14}a_{24} + a_{13}a_{14}a_{34} + a_{23}a_{24}a_{34}\right)\lambda + \det(A)
+$$
+where
+$$
+\det(A)=
+a_{12}^2a_{34}^2 + a_{13}^2a_{24}^2 + a_{14}^2a_{23}^2 - 2a_{12}a_{13}a_{24}a_{34} - 2a_{12}a_{14}a_{23}a_{34} - 2a_{13}a_{14}a_{23}a_{24}.
+$$
+Using arguments similar to those in the $n=3$ case, we can show that in the $n=4$ case,
+$A$ is Lorentzian if and only if $\det(A) \leq 0$.
+</p>
+
+<p>
+In [<a class="citation" href="#ref-1" id="cite-1">1, Proposition 3.1</a>],
+the determinant of such a $4\times 4$ matrix $A$ is written in the form
+$$
+\det(A) = -F_0 F_1 F_2 F_3
+$$
+where
+$$
+F_0 := \alpha + \beta + \gamma, \ F_1 := \alpha + \beta - \gamma, \ F_2 := \alpha + \gamma - \beta, \ F_3 := \gamma + \beta - \alpha
+$$
+and
+$$
+\alpha := \sqrt{a_{12}a_{34}}, \ \beta := \sqrt{a_{13}a_{24}}, \ \gamma := \sqrt{a_{14}a_{23}}.
+$$
+As $F_0 \geq 0$, we have $\det(A) \leq 0$ if and only if $F_1 F_2 F_3\geq 0$
+which is equivalent to $F_1,F_2,F_3 \geq 0$, because $F_1+F_2\geq 0$, $F_2+F_3\geq 0$, and $F_1+F_3 \geq 0$.
+
+This means that in the $n=4$ case, $A$ is Lorentzian if and only if
+the lengths $\alpha$, $\beta$, and $\gamma$ form a Euclidean triangle.
+</p>
+
+<footer>
+    <h2>References</h2>
+
+    <ol class="references">
+        <li id="ref-1">
+            Huang, Daoji, et al.
+            "<cite>Realizations of homology classes and projection areas</cite>."
+            arXiv preprint arXiv:2505.08881 (2025).
+        </li>
+        <li id="ref-2">
+            <a href="https://en.wikipedia.org/wiki/Perron%E2%80%93Frobenius_theorem">Perron-Frobenius theorem</a>.
+        </li>
+        <li id="ref-3">
+            Minc, Henryk.
+            <cite>Nonnegative matrices</cite>.
+            Vol. 170. New York: Wiley, 1988.
+        </li>
+        <li id="ref-4">
+            Bapat, Ravi B., and Tirukkannamangai ES Raghavan.
+            <cite>Nonnegative matrices and applications</cite>.
+            No. 64. Cambridge university press, 1997.
+        </li>
+        <li id="ref-5">
+            Shen, Shu-Qian, and Ting-Zhu Huang.
+            "<cite>On symmetric matrices with exactly one positive eigenvalue</cite>."
+            The Electronic Journal of Linear Algebra 20 (2010): 158-167.
+        </li>
+        <li id="ref-6">
+            <a href="https://en.wikipedia.org/wiki/Min-max_theorem#Cauchy_interlacing_theorem">Interlacing theorem</a>.
+        </li>
+    </ol>
+</footer>
+
+</body>
+</html>
