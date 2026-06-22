@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stiefel manifold</title>
+
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <script src="../assets/mathjax.js"></script>
+    <script async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <style>
+        .theorem {
+            margin: 2rem 0;
+            padding: 1rem 1.25rem;
+            border-left: 4px solid var(--border);
+            background: #f8fafc;
+        }
+
+        .theorem-title {
+            margin-top: 0;
+            font-weight: bold;
+        }
+
+        .proof {
+            margin-top: 1rem;
+        }
+
+        .qed {
+            float: right;
+            margin-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html">&larr; Home</a>
+</nav>
+
+<h1>Stiefel manifold</h1>
+
+<p><em>June 21, 2026</em></p>
+
+<p>
+This article states and proves some facts about the Stiefel manifold [<a class="citation" href="#ref-1" id="cite-1">1</a>].
+The Stiefel manifold is named after Swiss mathematician Eduard Stiefel.
+</p>
+
+<p>
+Given integers $n\geq p\geq 1$, we define the <em>Stiefel manifold</em> by
+$$
+V(n,p) := \{X\in \mathbb{R}^{n\times p} \ : \ X^\top X = I\}.
+$$
+The columns of a matrix $X\in V(n,p)$ are $p$ orthonormal vectors in $\mathbb{R}^n$.
+Our first result shows that $V(n,p)$ is a smooth manifold.
+</p>
+
+<section class="theorem">
+    <p class="theorem-title">Theorem 1.</p>
+
+    <p>
+    The Stiefel manifold $V(n,p)$ is an embedded submanifold of $\mathbb{R}^{n\times p}$ of dimension $np - \frac{1}{2}p(p+1)$.
+    </p>
+
+    <div class="proof">
+        <p>
+        <em>Proof.</em>
+        Let ${\rm Sym}(p)$ be the vector space of $p\times p$ real symmetric matrices.
+        Consider the smooth map $F:\mathbb{R}^{n\times p} \rightarrow {\rm Sym}(p)$ given by
+        $F(X) := X^\top X - I$. Let $X,U\in \mathbb{R}^{n\times p}$. Since
+        $$
+        F(X+U) = (X+U)^\top (X+U) - I = (X^\top + U^\top)(X+U) - I = X^\top U + U^\top X + X^\top X + U^\top U - I,
+        $$
+        the differential of $F$ at $X$ is $DF(X)[U] = X^\top U + U^\top X$. For any $X\in V(n,p)$ and $Z\in {\rm Sym}(p)$, one has
+        $$
+        DF(X)\left[ \frac{1}{2}XZ \right] = X^\top \frac{1}{2}XZ + \left[ \frac{1}{2}XZ \right]^\top X = \frac{1}{2}IZ+\frac{1}{2}IZ = Z.
+        $$
+        This means $DF(X)$ is surjective for any $X\in V(n,p) = F^{-1}(\{0\})$, and thus $0\in {\rm Sym}(p)$ is a regular value of $F$.
+        By the regular level set theorem [<a class="citation" href="#ref-2" id="cite-2">2, Corollary 5.14</a>], and since
+        $\dim(\mathbb{R}^{n\times p}) = np$ and $\dim({\rm Sym}(p)) = \frac{1}{2}p(p+1)$, we get the desired result.
+        <span class="qed">&#9632;</span>
+        </p>
+    </div>
+</section>
+
+<footer>
+    <h2>References</h2>
+
+    <ol class="references">
+        <li id="ref-1">
+            <a href="https://en.wikipedia.org/wiki/Stiefel_manifold">Stiefel manifold</a>.
+        </li>
+        <li id="ref-2">
+            Lee, John M.
+            <cite>Introduction to Smooth Manifolds</cite>.
+            Second edition.
+            New York, NY: Springer New York, 2013.
+        </li>
+    </ol>
+</footer>
+
+</body>
+</html>
