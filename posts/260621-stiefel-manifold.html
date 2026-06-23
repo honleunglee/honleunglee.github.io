@@ -63,7 +63,11 @@ Our first result shows that $V(n,p)$ is a smooth manifold.
     <p class="theorem-title">Theorem 1.</p>
 
     <p>
-    The Stiefel manifold $V(n,p)$ is an embedded submanifold of $\mathbb{R}^{n\times p}$ of dimension $np - \frac{1}{2}p(p+1)$.
+    The Stiefel manifold $V(n,p)$ is a compact embedded submanifold of $\mathbb{R}^{n\times p}$ of dimension $np - \frac{1}{2}p(p+1)$.
+    Morever, its tangent space at $X\in V(n,p)$ is given by
+    $$
+    T_X V(n,p) = \{U\in \mathbb{R}^{n\times p} \ : \ X^\top U + U^\top X = 0\}.
+    $$
     </p>
 
     <div class="proof">
@@ -71,21 +75,30 @@ Our first result shows that $V(n,p)$ is a smooth manifold.
         <em>Proof.</em>
         Let ${\rm Sym}(p)$ be the vector space of $p\times p$ real symmetric matrices.
         Consider the smooth map $F:\mathbb{R}^{n\times p} \rightarrow {\rm Sym}(p)$ given by
-        $F(X) := X^\top X - I$. Let $X,U\in \mathbb{R}^{n\times p}$. Since
+        $F(X) := X^\top X - I$. One has $V(n,p) = F^{-1}(\{0\})$ which implies $V(n,p)$ is closed
+        in $\mathbb{R}^{n\times k}$. In addition, $V(n,p)$ is bounded in $\mathbb{R}^{n\times k}$, hence it is compact.
+        Let $X,U\in \mathbb{R}^{n\times p}$ and $t\in \mathbb{R}$. Since
         $$
-        F(X+U) = (X+U)^\top (X+U) - I = (X^\top + U^\top)(X+U) - I = X^\top U + U^\top X + X^\top X + U^\top U - I,
+        F(X+U) = (X+tU)^\top (X+tU) - I = (X^\top + tU^\top)(X+tU) - I = t(X^\top U + U^\top X) + t^2(U^\top U)+ X^\top X - I,
         $$
-        the differential of $F$ at $X$ is $DF(X)[U] = X^\top U + U^\top X$. For any $X\in V(n,p)$ and $Z\in {\rm Sym}(p)$, one has
+        the differential of $F$ at $X$ is $dF(X)[U] = X^\top U + U^\top X$. For any $X\in V(n,p)$ and $Z\in {\rm Sym}(p)$, one has
         $$
-        DF(X)\left[ \frac{1}{2}XZ \right] = X^\top \frac{1}{2}XZ + \left[ \frac{1}{2}XZ \right]^\top X = \frac{1}{2}IZ+\frac{1}{2}IZ = Z.
+        dF(X)\left[ \frac{1}{2}XZ \right] = X^\top \frac{1}{2}XZ + \left[ \frac{1}{2}XZ \right]^\top X = \frac{1}{2}IZ+\frac{1}{2}IZ = Z.
         $$
-        This means $DF(X)$ is surjective for any $X\in V(n,p) = F^{-1}(\{0\})$, and thus $0\in {\rm Sym}(p)$ is a regular value of $F$.
+        This means $dF(X)$ is surjective for any $X\in V(n,p) = F^{-1}(\{0\})$, and thus $0\in {\rm Sym}(p)$ is a regular value of $F$.
         By the regular level set theorem [<a class="citation" href="#ref-2" id="cite-2">2, Corollary 5.14</a>], and since
-        $\dim(\mathbb{R}^{n\times p}) = np$ and $\dim({\rm Sym}(p)) = \frac{1}{2}p(p+1)$, we get the desired result.
+        $\dim(\mathbb{R}^{n\times p}) = np$ and $\dim({\rm Sym}(p)) = \frac{1}{2}p(p+1)$, we get the first result.
+        As $F$ is a defining map for $V(n,p)$, by [<a class="citation" href="#ref-2" id="cite-2">2, Proposition 5.38</a>]
+        we know $T_X V(n,p) = {\rm Ker}(dF(X)) = \{U\in \mathbb{R}^{n\times p} \ : \ X^\top U + U^\top X = 0\}$.
         <span class="qed">&#9632;</span>
         </p>
     </div>
 </section>
+
+<p>
+The next result is an alternate expression of the tangent space of the Stiefel manifold.
+</p>
+
 
 <footer>
     <h2>References</h2>
