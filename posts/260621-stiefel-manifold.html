@@ -47,7 +47,8 @@
 
 <p>
 This article states and proves some facts about the Stiefel manifold [<a class="citation" href="#ref-1" id="cite-1">1</a>].
-The Stiefel manifold is named after Swiss mathematician Eduard Stiefel.
+The Stiefel manifold is named after Swiss mathematician Eduard Stiefel. Many results and proofs come from
+[<a class="citation" href="#ref-2" id="cite-2">2</a>].
 </p>
 
 <p>
@@ -86,9 +87,9 @@ Our first result shows that $V(n,p)$ is a smooth manifold.
         dF(X)\left[ \frac{1}{2}XZ \right] = X^\top \frac{1}{2}XZ + \left[ \frac{1}{2}XZ \right]^\top X = \frac{1}{2}IZ+\frac{1}{2}IZ = Z.
         $$
         This means $dF(X)$ is surjective for any $X\in V(n,p) = F^{-1}(\{0\})$, and thus $0\in {\rm Sym}(p)$ is a regular value of $F$.
-        By the regular level set theorem [<a class="citation" href="#ref-2" id="cite-2">2, Corollary 5.14</a>], and since
+        By the regular level set theorem [<a class="citation" href="#ref-3" id="cite-3">3, Corollary 5.14</a>], and since
         $\dim(\mathbb{R}^{n\times p}) = np$ and $\dim({\rm Sym}(p)) = \frac{1}{2}p(p+1)$, we get the first result.
-        As $F$ is a defining map for $V(n,p)$, by [<a class="citation" href="#ref-2" id="cite-2">2, Proposition 5.38</a>]
+        As $F$ is a defining map for $V(n,p)$, by [<a class="citation" href="#ref-3" id="cite-3">3, Proposition 5.38</a>]
         we know $T_X V(n,p) = {\rm Ker}(dF(X)) = \{U\in \mathbb{R}^{n\times p} \ : \ X^\top U + U^\top X = 0\}$.
         <span class="qed">&#9632;</span>
         </p>
@@ -99,6 +100,82 @@ Our first result shows that $V(n,p)$ is a smooth manifold.
 The next result is an alternate expression of the tangent space of the Stiefel manifold.
 </p>
 
+<section class="theorem">
+    <p class="theorem-title">Theorem 2.</p>
+
+    <p>
+    The tangent space of the Stiefel manifold $V(n,p)$ at $X\in V(n,p)$ is given by
+    $$
+    T_X V(n,p) = \{XZ  + X_\perp A \ : \ Z \in \mathbb{R}^{p\times p} \text{ is skew-symmetric, } A\in \mathbb{R}^{(n-p)\times p} \}
+    $$
+    where $X_\perp\in \mathbb{R}^{n\times (n-p)}$ is a matrix whose columns span the orthogonal complement of the column span of $X$.
+    </p>
+
+    <div class="proof">
+        <p>
+        <em>Proof.</em>
+        Since any vector in $\mathbb{R}^n$ is a linear combination of the columns of $X$ and the columns of $X_\perp$,
+        any $n\times p$ matrix $U\in T_X V(n,p)$ can be expressed as $U = XZ+X_\perp A$ for some matrices $Z\in \mathbb{R}^{p\times p}$
+        and $A\in \mathbb{R}^{(n-p)\times p}$. By Theorem 1, we know $X^\top U + U^\top X = 0$ which implies the equality
+        $$
+        X^\top (XZ+X_\perp A) + (Z^\top X^\top + A^\top X_\perp^\top) X = 0.
+        $$
+        As $X^\top X = I$ and $X^\top X_\perp = 0$, we get $Z+Z^\top = 0$ which means $Z$ is skew-symmetric.
+        This proves one inclusion. The converse of the above argument holds because if $Z\in \mathbb{R}^{p\times p}$ is skew-symmetric
+        and $A\in \mathbb{R}^{(n-p)\times p}$ then $U=XZ+X_\perp A$ satisfies $X^\top U + U^\top X = 0$. This finishes the proof.
+        <span class="qed">&#9632;</span>
+        </p>
+    </div>
+</section>
+
+<p>
+Notice that if $n=p$ meaning $V(n,p)$ is the real orthogonal group $O(n)$ then the above tangent space formula
+simplifies to
+$$
+T_X O(n) = \{XZ  \ :  \ Z \in \mathbb{R}^{p\times p} \text{ is skew-symmetric} \}
+$$
+for any $X\in O(n)$.
+</p>
+
+<p>
+Since $\mathbb{R}^{n\times p}$ is a Riemannian manifold with the standard inner product
+$$
+\langle X, Y \rangle = {\rm tr}(X^\top Y) \text{ where } X,Y\in \mathbb{R}^{n\times p},
+$$
+the Stiefel manifold $V(n,p)$ is a Riemannian submanifold with the same inner product restricted on $V(n,p)^2$.
+Then we have the following formula for the normal space of $V(n,p)$.
+</p>
+
+<section class="theorem">
+    <p class="theorem-title">Theorem 3.</p>
+
+    <p>
+    The normal space of the Stiefel manifold $V(n,p)$ at $X\in V(n,p)$ is given by
+    $$
+    (T_X V(n,p))^\perp = \{XB  \ : \ B \in \mathbb{R}^{p\times p} \text{ is symmetric} \}
+    $$
+    </p>
+
+    <div class="proof">
+        <p>
+        <em>Proof.</em>
+        For any symmetric matrix $B\in \mathbb{R}^{p\times p}$, skew-symmetric matrix $Z\in \mathbb{R}^{p\times p}$
+        and $A\in \mathbb{R}^{(n-p)\times p}$, one has
+        $$
+        {\rm tr}((XB)^\top (XZ+X_\perp A)) = {\rm tr}(B^\top X^\top XZ + B^\top X^\top X_\perp A) = {\rm tr}(BZ) = 0,
+        $$
+        since $X^\top X = I$, $X^\top X_\perp = 0$, $B^\top = B$, $Z^\top = -Z$ and ${\rm tr}(BZ) = {\rm tr}((BZ)^\top) = {\rm tr}(Z^\top B^\top)
+        = -{\rm tr}(ZB) = - {\rm tr}(BZ)$.
+        This proves the inclusion $\supset$. As the right hand side is a vector subspace of dimension $\frac{1}{2}p(p+1)$
+        which equals to the dimension of $(T_X V(n,p))^\perp$, the inclusion is indeed an equality.
+        <span class="qed">&#9632;</span>
+        </p>
+    </div>
+</section>
+
+<p>
+Next, we compute the projections of any matrix $X\in \mathbb{R}^{n\times p}$ on the tangent and the normal spaces of $V(n,p)$.
+</p>
 
 <footer>
     <h2>References</h2>
@@ -108,6 +185,11 @@ The next result is an alternate expression of the tangent space of the Stiefel m
             <a href="https://en.wikipedia.org/wiki/Stiefel_manifold">Stiefel manifold</a>.
         </li>
         <li id="ref-2">
+            Absil, P-A., Robert Mahony, and Rodolphe Sepulchre.
+            <cite>Optimization algorithms on matrix manifolds.</cite>.
+            Princeton University Press, 2008.
+        </li>
+        <li id="ref-3">
             Lee, John M.
             <cite>Introduction to Smooth Manifolds</cite>.
             Second edition.
