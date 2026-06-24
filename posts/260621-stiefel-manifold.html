@@ -90,7 +90,7 @@ Our first result shows that $V(n,p)$ is a smooth manifold.
         By the regular level set theorem [<a class="citation" href="#ref-3" id="cite-3">3, Corollary 5.14</a>], and since
         $\dim(\mathbb{R}^{n\times p}) = np$ and $\dim({\rm Sym}(p)) = \frac{1}{2}p(p+1)$, we get the first result.
         As $F$ is a defining map for $V(n,p)$, by [<a class="citation" href="#ref-3" id="cite-3">3, Proposition 5.38</a>]
-        we know $T_X V(n,p) = {\rm Ker}(dF(X)) = \{U\in \mathbb{R}^{n\times p} \ : \ X^\top U + U^\top X = 0\}$.
+        we know $T_X V(n,p) = {\rm ker}(dF(X)) = \{U\in \mathbb{R}^{n\times p} \ : \ X^\top U + U^\top X = 0\}$.
         <span class="qed">&#9632;</span>
         </p>
     </div>
@@ -174,8 +174,47 @@ Then we have the following formula for the normal space of $V(n,p)$.
 </section>
 
 <p>
-Next, we compute the projections of any matrix $X\in \mathbb{R}^{n\times p}$ on the tangent and the normal spaces of $V(n,p)$.
+Next, we compute the projections of any matrix $Y\in \mathbb{R}^{n\times p}$ on the tangent and the normal spaces of $V(n,p)$.
 </p>
+
+<section class="theorem">
+    <p class="theorem-title">Theorem 4.</p>
+
+    <p>
+    For any matrix $Y\in\mathbb{R}^{n\times p}$, its projections on $T_X V(n,p)$ and $(T_X V(n,p))^\perp$ are given by
+    $$
+    {\rm proj}_{T_X V(n,p)}(Y) = X {\rm skew}(X^\top Y) + (1-XX^\top) Y, \ {\rm proj}_{(T_X V(n,p))^\perp}(Y) = X{\rm sym}(X^\top Y),
+    $$
+    where ${\rm sym}(A) := \frac{1}{2}(A+A^\top)$ and ${\rm skew}(A) := \frac{1}{2}(A-A^\top)$ denote
+    the symmetric part and the skew-symmetric part of a matrix $A$ respectively.
+    </p>
+
+    <div class="proof">
+        <p>
+        <em>Proof.</em>
+        Pick $X_\perp$ in a way that stacking $X$ alongside with $X_\perp$ forms a matrix in $O(n)$.
+        It follows that $XX^\top + X_\perp X_\perp^\top = I$.
+        Any matrix $Y\in\mathbb{R}^{n\times p}$ is a sum of two terms
+        $$
+        Y = XX^\top Y + (I-XX^\top) Y = [X{\rm skew}(X^\top Y) + X_\perp (X_\perp^\top Y)] + X{\rm sym}(X^\top Y),
+        $$
+        so that by Theorems 2 and 3, the first term $X{\rm skew}(X^\top Y) + X_\perp (X_\perp^\top Y)$ belongs to
+        $T_X V(n,p)$ and the second term $X{\rm sym}(X^\top Y)$ belongs to $(T_X V(n,p))^\perp$. Hence the result follows.
+        <span class="qed">&#9632;</span>
+        </p>
+    </div>
+</section>
+
+<p>
+Consider the Euclidean connection (i.e., standard directional derivative) $D$ on $\mathbb{R}^{n\times p}$.
+Then the Riemannian connection $\nabla$ on the embedded submanifold $V(n,p)$ is given by
+$$
+\nabla_U \eta = {\rm proj}_{T_X V(n,p)}(D\eta(X)[U]) =
+X {\rm skew}(X^\top D\eta(X)[U]) + (1-XX^\top) D\eta(X)[U]
+$$
+for any $X\in V(p,n)$, $U\in T_X V(n,p)$ and vector field $\eta$ on $V(p,n)$.
+</p>
+
 
 <footer>
     <h2>References</h2>
