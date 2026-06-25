@@ -43,11 +43,11 @@
 
 <h1>Stiefel manifold</h1>
 
-<p><em>June 21, 2026</em></p>
+<p><em>June 24, 2026</em></p>
 
 <p>
 This article states and proves some facts about the Stiefel manifold [<a class="citation" href="#ref-1" id="cite-1">1</a>].
-The Stiefel manifold is named after Swiss mathematician Eduard Stiefel. Many results and proofs come from
+The Stiefel manifold is named after the Swiss mathematician Eduard Stiefel. Many of the results and proofs below come from
 [<a class="citation" href="#ref-2" id="cite-2">2</a>].
 </p>
 
@@ -65,7 +65,7 @@ Our first result shows that $V(n,p)$ is a smooth manifold.
 
     <p>
     The Stiefel manifold $V(n,p)$ is a compact embedded submanifold of $\mathbb{R}^{n\times p}$ of dimension $np - \frac{1}{2}p(p+1)$.
-    Morever, its tangent space at $X\in V(n,p)$ is given by
+    Moreover, its tangent space at $X\in V(n,p)$ is given by
     $$
     T_X V(n,p) = \{U\in \mathbb{R}^{n\times p} \ : \ X^\top U + U^\top X = 0\}.
     $$
@@ -76,28 +76,29 @@ Our first result shows that $V(n,p)$ is a smooth manifold.
         <em>Proof.</em>
         Let ${\rm Sym}(p)$ be the vector space of $p\times p$ real symmetric matrices.
         Consider the smooth map $F:\mathbb{R}^{n\times p} \rightarrow {\rm Sym}(p)$ given by
-        $F(X) := X^\top X - I$. One has $V(n,p) = F^{-1}(\{0\})$ which implies $V(n,p)$ is closed
-        in $\mathbb{R}^{n\times k}$. In addition, $V(n,p)$ is bounded in $\mathbb{R}^{n\times k}$, hence it is compact.
+        $F(X) := X^\top X - I$. One has $V(n,p) = F^{-1}(\{0\})$, which implies $V(n,p)$ is closed
+        in $\mathbb{R}^{n\times p}$. In addition, $V(n,p)$ is bounded in $\mathbb{R}^{n\times p}$, so it is compact.
         Let $X,U\in \mathbb{R}^{n\times p}$ and $t\in \mathbb{R}$. Since
         $$
-        F(X+U) = (X+tU)^\top (X+tU) - I = (X^\top + tU^\top)(X+tU) - I = t(X^\top U + U^\top X) + t^2(U^\top U)+ X^\top X - I,
+        F(X+tU) = (X+tU)^\top (X+tU) - I = (X^\top + tU^\top)(X+tU) - I = t(X^\top U + U^\top X) + t^2(U^\top U) + X^\top X - I,
         $$
         the differential of $F$ at $X$ is $dF(X)[U] = X^\top U + U^\top X$. For any $X\in V(n,p)$ and $Z\in {\rm Sym}(p)$, one has
         $$
-        dF(X)\left[ \frac{1}{2}XZ \right] = X^\top \frac{1}{2}XZ + \left[ \frac{1}{2}XZ \right]^\top X = \frac{1}{2}IZ+\frac{1}{2}IZ = Z.
+        dF(X)\left[ \frac{1}{2}XZ \right] = X^\top \frac{1}{2}XZ + \left[ \frac{1}{2}XZ \right]^\top X = \frac{1}{2}Z+\frac{1}{2}Z = Z.
         $$
         This means $dF(X)$ is surjective for any $X\in V(n,p) = F^{-1}(\{0\})$, and thus $0\in {\rm Sym}(p)$ is a regular value of $F$.
-        By the regular level set theorem [<a class="citation" href="#ref-3" id="cite-3">3, Corollary 5.14</a>], and since
-        $\dim(\mathbb{R}^{n\times p}) = np$ and $\dim({\rm Sym}(p)) = \frac{1}{2}p(p+1)$, we get the first result.
-        As $F$ is a defining map for $V(n,p)$, by [<a class="citation" href="#ref-3" id="cite-3">3, Proposition 5.38</a>]
-        we know $T_X V(n,p) = {\rm ker}(dF(X)) = \{U\in \mathbb{R}^{n\times p} \ : \ X^\top U + U^\top X = 0\}$.
+        The regular level set theorem [<a class="citation" href="#ref-3" id="cite-3">3, Corollary 5.14</a>] applies.
+        Since $\dim(\mathbb{R}^{n\times p}) = np$ and $\dim({\rm Sym}(p)) = \frac{1}{2}p(p+1)$,
+        we get the submanifold assertion and dimension formula.
+        Since $F$ is a defining map for $V(n,p)$, [<a class="citation" href="#ref-3">3, Proposition 5.38</a>]
+        gives $T_X V(n,p) = {\rm ker}(dF(X)) = \{U\in \mathbb{R}^{n\times p} \ : \ X^\top U + U^\top X = 0\}$.
         <span class="qed">&#9632;</span>
         </p>
     </div>
 </section>
 
 <p>
-The next result is an alternate expression of the tangent space of the Stiefel manifold.
+The next result is an alternative expression for the tangent space of the Stiefel manifold.
 </p>
 
 <section class="theorem">
@@ -106,7 +107,7 @@ The next result is an alternate expression of the tangent space of the Stiefel m
     <p>
     The tangent space of the Stiefel manifold $V(n,p)$ at $X\in V(n,p)$ is given by
     $$
-    T_X V(n,p) = \{XZ  + X_\perp A \ : \ Z \in \mathbb{R}^{p\times p} \text{ is skew-symmetric, } A\in \mathbb{R}^{(n-p)\times p} \}
+    T_X V(n,p) = \{XZ  + X_\perp A \ : \ Z \in \mathbb{R}^{p\times p} \text{ is skew-symmetric, } A\in \mathbb{R}^{(n-p)\times p} \},
     $$
     where $X_\perp\in \mathbb{R}^{n\times (n-p)}$ is a matrix whose columns span the orthogonal complement of the column span of $X$.
     </p>
@@ -116,23 +117,23 @@ The next result is an alternate expression of the tangent space of the Stiefel m
         <em>Proof.</em>
         Since any vector in $\mathbb{R}^n$ is a linear combination of the columns of $X$ and the columns of $X_\perp$,
         any $n\times p$ matrix $U\in T_X V(n,p)$ can be expressed as $U = XZ+X_\perp A$ for some matrices $Z\in \mathbb{R}^{p\times p}$
-        and $A\in \mathbb{R}^{(n-p)\times p}$. By Theorem 1, we know $X^\top U + U^\top X = 0$ which implies the equality
+        and $A\in \mathbb{R}^{(n-p)\times p}$. By Theorem 1, we know $X^\top U + U^\top X = 0$, which implies
         $$
         X^\top (XZ+X_\perp A) + (Z^\top X^\top + A^\top X_\perp^\top) X = 0.
         $$
-        As $X^\top X = I$ and $X^\top X_\perp = 0$, we get $Z+Z^\top = 0$ which means $Z$ is skew-symmetric.
+        Since $X^\top X = I$ and $X^\top X_\perp = 0$, we get $Z+Z^\top = 0$, which means $Z$ is skew-symmetric.
         This proves one inclusion. The converse of the above argument holds because if $Z\in \mathbb{R}^{p\times p}$ is skew-symmetric
-        and $A\in \mathbb{R}^{(n-p)\times p}$ then $U=XZ+X_\perp A$ satisfies $X^\top U + U^\top X = 0$. This finishes the proof.
+        and $A\in \mathbb{R}^{(n-p)\times p}$, then $U=XZ+X_\perp A$ satisfies $X^\top U + U^\top X = 0$. This finishes the proof.
         <span class="qed">&#9632;</span>
         </p>
     </div>
 </section>
 
 <p>
-Notice that if $n=p$ meaning $V(n,p)$ is the real orthogonal group $O(n)$ then the above tangent space formula
+Notice that if $n=p$, then $V(n,p)$ is the real orthogonal group $O(n)$, and the above tangent space formula
 simplifies to
 $$
-T_X O(n) = \{XZ  \ :  \ Z \in \mathbb{R}^{p\times p} \text{ is skew-symmetric} \}
+T_X O(n) = \{XZ  \ :  \ Z \in \mathbb{R}^{n\times n} \text{ is skew-symmetric} \}
 $$
 for any $X\in O(n)$.
 </p>
@@ -142,7 +143,7 @@ Since $\mathbb{R}^{n\times p}$ is a Riemannian manifold with the standard inner 
 $$
 \langle X, Y \rangle = {\rm tr}(X^\top Y) \text{ where } X,Y\in \mathbb{R}^{n\times p},
 $$
-the Stiefel manifold $V(n,p)$ is a Riemannian submanifold with the same inner product restricted on $V(n,p)^2$.
+the Stiefel manifold $V(n,p)$ is a Riemannian submanifold with the same inner product restricted to its tangent spaces.
 Then we have the following formula for the normal space of $V(n,p)$.
 </p>
 
@@ -152,47 +153,47 @@ Then we have the following formula for the normal space of $V(n,p)$.
     <p>
     The normal space of the Stiefel manifold $V(n,p)$ at $X\in V(n,p)$ is given by
     $$
-    (T_X V(n,p))^\perp = \{XB  \ : \ B \in \mathbb{R}^{p\times p} \text{ is symmetric} \}
+    (T_X V(n,p))^\perp = \{XB  \ : \ B \in \mathbb{R}^{p\times p} \text{ is symmetric} \}.
     $$
     </p>
 
     <div class="proof">
         <p>
         <em>Proof.</em>
-        For any symmetric matrix $B\in \mathbb{R}^{p\times p}$, skew-symmetric matrix $Z\in \mathbb{R}^{p\times p}$
+        For any symmetric matrix $B\in \mathbb{R}^{p\times p}$, any skew-symmetric matrix $Z\in \mathbb{R}^{p\times p}$,
         and $A\in \mathbb{R}^{(n-p)\times p}$, one has
         $$
         {\rm tr}((XB)^\top (XZ+X_\perp A)) = {\rm tr}(B^\top X^\top XZ + B^\top X^\top X_\perp A) = {\rm tr}(BZ) = 0,
         $$
-        since $X^\top X = I$, $X^\top X_\perp = 0$, $B^\top = B$, $Z^\top = -Z$ and ${\rm tr}(BZ) = {\rm tr}((BZ)^\top) = {\rm tr}(Z^\top B^\top)
-        = -{\rm tr}(ZB) = - {\rm tr}(BZ)$.
-        This proves the inclusion $\supset$. As the right hand side is a vector subspace of dimension $\frac{1}{2}p(p+1)$
-        which equals to the dimension of $(T_X V(n,p))^\perp$, the inclusion is indeed an equality.
+        since $X^\top X = I$, $X^\top X_\perp = 0$, $B^\top = B$, $Z^\top = -Z$, and ${\rm tr}(BZ) = {\rm tr}((BZ)^\top) = {\rm tr}(Z^\top B^\top)
+        = -{\rm tr}(ZB) = -{\rm tr}(BZ)$.
+        This proves the inclusion $\supset$. As the right-hand side is a vector subspace of dimension $\frac{1}{2}p(p+1)$,
+        which equals the dimension of $(T_X V(n,p))^\perp$, the inclusion is indeed an equality.
         <span class="qed">&#9632;</span>
         </p>
     </div>
 </section>
 
 <p>
-Next, we compute the projections of any matrix $Y\in \mathbb{R}^{n\times p}$ on the tangent and the normal spaces of $V(n,p)$.
+Next, we compute the projections of any matrix $Y\in \mathbb{R}^{n\times p}$ onto the tangent and normal spaces of $V(n,p)$.
 </p>
 
 <section class="theorem">
     <p class="theorem-title">Theorem 4.</p>
 
     <p>
-    For any matrix $Y\in\mathbb{R}^{n\times p}$, its projections on $T_X V(n,p)$ and $(T_X V(n,p))^\perp$ are given by
+    For any matrix $Y\in\mathbb{R}^{n\times p}$ and $X\in V(n,p)$, the projections of $Y$ onto $T_X V(n,p)$ and $(T_X V(n,p))^\perp$ are given by
     $$
-    {\rm proj}_{T_X V(n,p)}(Y) = X {\rm skew}(X^\top Y) + (1-XX^\top) Y, \ {\rm proj}_{(T_X V(n,p))^\perp}(Y) = X{\rm sym}(X^\top Y),
+    {\rm proj}_{T_X V(n,p)}(Y) = X {\rm skew}(X^\top Y) + (I-XX^\top) Y, \ {\rm proj}_{(T_X V(n,p))^\perp}(Y) = X{\rm sym}(X^\top Y),
     $$
     where ${\rm sym}(A) := \frac{1}{2}(A+A^\top)$ and ${\rm skew}(A) := \frac{1}{2}(A-A^\top)$ denote
-    the symmetric part and the skew-symmetric part of a matrix $A$ respectively.
+    the symmetric part and the skew-symmetric part of a matrix $A$, respectively.
     </p>
 
     <div class="proof">
         <p>
         <em>Proof.</em>
-        Pick $X_\perp$ in a way that stacking $X$ alongside with $X_\perp$ forms a matrix in $O(n)$.
+        Pick $X_\perp$ so that stacking $X$ together with $X_\perp$ forms a matrix in $O(n)$.
         It follows that $XX^\top + X_\perp X_\perp^\top = I$.
         Any matrix $Y\in\mathbb{R}^{n\times p}$ is a sum of two terms
         $$
@@ -210,9 +211,9 @@ Consider the Euclidean connection (i.e., standard directional derivative) $D$ on
 Then the Riemannian connection $\nabla$ on the embedded submanifold $V(n,p)$ is given by
 $$
 \nabla_U \eta = {\rm proj}_{T_X V(n,p)}(D\eta(X)[U]) =
-X {\rm skew}(X^\top D\eta(X)[U]) + (1-XX^\top) D\eta(X)[U]
+X {\rm skew}(X^\top D\eta(X)[U]) + (I-XX^\top) D\eta(X)[U]
 $$
-for any $X\in V(p,n)$, $U\in T_X V(n,p)$ and vector field $\eta$ on $V(p,n)$.
+for any $X\in V(n,p)$, $U\in T_X V(n,p)$, and any vector field $\eta$ on $V(n,p)$.
 </p>
 
 
@@ -225,7 +226,7 @@ for any $X\in V(p,n)$, $U\in T_X V(n,p)$ and vector field $\eta$ on $V(p,n)$.
         </li>
         <li id="ref-2">
             Absil, P-A., Robert Mahony, and Rodolphe Sepulchre.
-            <cite>Optimization algorithms on matrix manifolds.</cite>.
+            <cite>Optimization Algorithms on Matrix Manifolds</cite>.
             Princeton University Press, 2008.
         </li>
         <li id="ref-3">
