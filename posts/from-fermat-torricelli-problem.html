@@ -46,9 +46,37 @@
 <p><em>July XX, 2026</em></p>
 
 <p>
-The Fermat-Torricelli problem
+The <em>Fermat-Torricelli problem</em> [<a class="citation" href="#ref-1" id="cite-1">1</a>] is a classical geometry problem raised by Fermat (1605-1665).
+Given three points on a plane forming a triangle, the problem is to find a point on the plane so that the sum of the three distances
+from each given point to this point is the smallest. The solution is called the <em>Fermat-Torricelli point</em>.
 </p>
 
+<p>
+Expressing in modern language, given three non-collinear points $a_1,a_2,a_3\in\mathbb{R}^2$,
+the Fermat-Torricelli problem is to find
+$x_0\in \mathbb{R}^2$ so that $x_0 = {\rm argmin}_{x\in\mathbb{R}^2} \varphi(x)$ where the cost function $\varphi$ is given by
+$$
+\varphi(x) = \|x-a_1\|_2 + \|x-a_2\|_2 + \|x-a_3\|_2, \text{ for all } x\in \mathbb{R}^2.
+$$
+As $\varphi$ is a convex coercive function on $\mathbb{R}^2$, we know the problem has a unique solution which is the Fermat-Torricelli point.
+</p>
+
+<p>
+The Fermat-Torricelli point $x_0$ can be described as follows. If any one of the interior angles of the triangle,
+say the angle between $a_2-a_1$ and $a_3-a_1$,
+is at least $120$ degrees, then $x_0=a_1$. Otherwise, $x_0$ is a point so that the angle between
+$a_i - x_0$ and $a_j - x_0$ is exactly $120$ degrees for any $1\leq i < j \leq 3$.
+</p>
+
+<footer>
+    <h2>References</h2>
+
+    <ol class="references">
+        <li id="ref-1">
+            <a href="https://en.wikipedia.org/wiki/Fermat_point">Fermat point</a>.
+        </li>
+    </ol>
+</footer>
 
 </body>
 </html>
